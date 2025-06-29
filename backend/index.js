@@ -7,8 +7,13 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
-app.use(cors());
+
 app.use(express.json());
+
+app.use(cors({
+  origin: ['http://localhost:5173','http://localhost:5174',"https://my-portfolio-umber-chi-98.vercel.app"], // Set to the exact origin
+  credentials: true, // Allow cookies and credentials
+}));
 
 // POST /contact endpoint
 app.post("/api/contact", async (req, res) => {
