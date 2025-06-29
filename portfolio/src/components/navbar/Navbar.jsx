@@ -4,8 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-scroll";
 import { scroller } from "react-scroll";
-import Button from "../../assets/button.png"
- const Navbar = () => {
+import Button from "../../assets/button.png";
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = ["AboutMe", "Skills", "Projects"];
@@ -33,15 +33,15 @@ import Button from "../../assets/button.png"
   }, []);
 
   return (
-    <motion.nav 
-    initial={{ y: -40, opacity: 0 }}
+    <motion.nav
+      initial={{ y: -40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ type: "spring", stiffness: 100, damping: 15 }}
-    className="bg-white/10 backdrop-blur-md mx-10 border fixed w-[85%] md:w-full mt-6  border-white/20 shadow-lg text-white px-4 py-[8px] rounded-[20px] max-w-6xl  flex items-center justify-between z-50 ">
+      className="bg-white/10 backdrop-blur-md mx-10 border fixed w-[85%] md:w-full mt-6  border-white/20 shadow-lg text-white px-4 py-[8px] rounded-[20px] max-w-6xl  flex items-center justify-between z-50 "
+    >
       {/* Logo */}
       <div className="flex items-center space-x-2 ">
         <Link
-        
           to={"home"}
           smooth={true}
           duration={300}
@@ -77,7 +77,17 @@ import Button from "../../assets/button.png"
       </div>
 
       {/* Hire Me Button */}
-      <Link to="contact" className=" hidden md:block ">
+      <Link
+        to="contact"
+        smooth={true}
+        duration={300}
+        offset={-100}
+        spy={true}
+        onSetActive={() => {
+          window.history.replaceState(null, "", `contact`);
+        }}
+        className=" hidden md:block "
+      >
         <button className=" text-sm   text-white nav-btn border border-[#22D3EE] rounded-full px-4 py-[6px] hover:bg-[#22D3EE] hover:text-black font-semibold">
           contact me
         </button>
@@ -124,11 +134,23 @@ import Button from "../../assets/button.png"
                 {item}
               </Link>
             ))}
-            <div className="px-4 py-2 w-full text-center">
+            <Link
+              to="contact"
+              smooth={true}
+              duration={300}
+              offset={-100}
+              spy={true}
+              onClick={() => setIsOpen(false)}
+              onSetActive={() => {
+                window.history.replaceState(null, "", `contact`);
+              }}
+              className="px-4 py-2 w-full text-center"
+            ><div className="w-full">
               <button className=" text-sm   text-white nav-btn border border-[#22D3EE] rounded-full px-4 py-[6px] hover:bg-[#22D3EE] hover:text-black font-semibold">
-          contact me
-        </button>
-            </div>
+                contact me
+              </button>
+              </div>
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>

@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <Element
       name="home"
-      className="md:min-h-screen h-[90vh]  md:mx-10  text-white flex flex-col-reverse md:flex-row md:justify-between justify-center  md:pt-14 md:mt-0 mt-16 md:px-14 items-center"
+      className="md:min-h-screen h-[90vh]  md:mx-10    text-white flex flex-col-reverse md:flex-row md:justify-between justify-center  md:pt-14 md:mt-0 mt-16 md:px-14 items-center"
     >
       {/* Left Content */}
       <motion.div
