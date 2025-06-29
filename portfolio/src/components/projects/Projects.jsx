@@ -3,19 +3,19 @@ import { Element } from "react-scroll";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { SiFigma, SiSketch } from "react-icons/si";
 import { FaReact, FaNode } from "react-icons/fa";
-import { FaHtml5, FaCss3Alt, FaJsSquare,  FaGitAlt } from 'react-icons/fa'
-import { SiTailwindcss, SiMongodb, SiRedux } from 'react-icons/si'
+import { FaHtml5, FaCss3Alt, FaJsSquare, FaGitAlt } from "react-icons/fa";
+import { SiTailwindcss, SiMongodb, SiRedux } from "react-icons/si";
 import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
 const projects = [
   {
     title: "Teckzite2k25",
     description:
-      "This is a technical fest website of our college. As a member of the web team, I was primarily responsible for designing the website's user interface and also contributed significantly to the frontend development.",
+      "As part of the web team for our college's technical fest, I focused on UI design and contributed significantly to frontend development.",
     image: "./teckzite2k25.png",
     tools: [<SiFigma key="figma" />, <FaReact key="react" />],
     link: "https://teckzite.org",
-    type:"Web"
+    type: "Web",
   },
   {
     title: "Alumni",
@@ -24,34 +24,38 @@ const projects = [
     image: "./alumni.png",
     tools: [<FaReact key="react" />],
     link: "https://alumni-repo.vercel.app/",
-    type:"Web"
+    type: "Web",
   },
   {
     title: "Filmymoji website (Cloned from Axiom)",
     description:
       "To strengthen my frontend skills, I replicated this website with a new theme and tailored content.",
     image: "./filmymoji.png",
-    tools: [<FaHtml5 key="html"/> , <SiTailwindcss key="tailwind" />,<FaJsSquare key="tailwind" />],
+    tools: [
+      <FaHtml5 key="html" />,
+      <SiTailwindcss key="tailwind" />,
+      <FaJsSquare key="tailwind" />,
+    ],
     link: "https://team-html.vercel.app/task.html",
-    type:"Web"
+    type: "Web",
   },
   {
     title: "Locus",
     description:
-      "A mobile app which is a location based information sharing platform. I worked as designing member in the team. ",
+      "Contributed as a UI/UX designer for a mobile app focused on location-based information sharing, enhancing user experience and interface consistency.",
     image: "./locus.png",
     tools: [<SiFigma key="figma" />],
     link: "./locus.mp4",
-    type:"UI/UX"
+    type: "UI/UX",
   },
   {
     title: "Local Skill Connect",
     description:
-      "A mobile app which is a mediator between service provider and service user. I involved in the designing part. ",
+      "Designed the user interface for a mobile app that connects service providers with service users, acting as a mediator platform.",
     image: "./localskillconnect.png",
     tools: [<SiFigma key="figma" />],
     link: "./localskillconnect.mp4",
-    type:"UI/UX"
+    type: "UI/UX",
   },
 ];
 
@@ -99,12 +103,18 @@ const Projects = () => {
                   />
                   <div>
                     <div className="flex gap-4 mb-1 w-full">
-                    <h3 className="md:text-lg text-md font-semibold text-white ">
-                      {project.title}
-                    </h3>
-                    <button className={`px-3 py-0 text-xs h-6 rounded-2xl text-black font-semibold ${project.type==="Web"?"bg-[#22D3EE]":"bg-[#cf52b4]"}`}>
-                      {project.type}
-                    </button>
+                      <h3 className="md:text-lg text-md font-semibold text-white ">
+                        {project.title}
+                      </h3>
+                      <button
+                        className={`px-3 py-0 text-xs h-6 rounded-2xl text-black font-semibold ${
+                          project.type === "Web"
+                            ? "bg-[#22D3EE]"
+                            : "bg-[#cf52b4]"
+                        }`}
+                      >
+                        {project.type}
+                      </button>
                     </div>
                     <p className="md:text-xs text-[10px] text-gray-400 mb-4">
                       {project.description}
