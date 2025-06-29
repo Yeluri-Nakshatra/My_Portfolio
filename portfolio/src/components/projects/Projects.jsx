@@ -20,7 +20,7 @@ const projects = [
   {
     title: "Alumni",
     description:
-      "This is our college's website designed to maintain collaboration with alumni. As a member of the development team, I contributed to the frontend  development of the platform.",
+      "Contributed to the frontend development of our college’s alumni portal, designed to foster ongoing collaboration and engagement with former students.",
     image: "./alumni.png",
     tools: [<FaReact key="react" />],
     link: "https://alumni-repo.vercel.app/",
@@ -72,7 +72,7 @@ const Projects = () => {
           My Projects
         </motion.h2>
 
-        <motion.div className=" flex  flex-wrap gap-16 md:justify-start w-full items-center">
+        <motion.div className=" flex  flex-wrap gap-16 md:justify-start w-full items-stretch ">
           {projects.map((project, index) => (
             <motion.div
               initial={{ opacity: 0, y: 80 }}
@@ -82,7 +82,7 @@ const Projects = () => {
                 ease: "easeOut",
                 delay: index * 0.1,
               }}
-              className=" w-full md:w-[28%]"
+              className=" w-full md:w-[28%] h-full"
             >
               <Tilt
                 key={index}
@@ -95,7 +95,7 @@ const Projects = () => {
                 tiltMaxAngleY={5}
                 className="w-full  rounded-2xl overflow-hidden"
               >
-                <div className="rounded-2xl border cursor-pointer overflow-hidden flex flex-col p-4 pb-8 shadow-md shadow-[#22D3EE] gap-8 transition-all duration-300 bg-[#0f172a]">
+                <div className="rounded-2xl border h-full cursor-pointer overflow-hidden flex flex-col p-4 pb-8 shadow-md shadow-[#22D3EE] gap-8 transition-all duration-300 bg-[#0f172a]">
                   <img
                     src={project.image}
                     alt={project.title}
