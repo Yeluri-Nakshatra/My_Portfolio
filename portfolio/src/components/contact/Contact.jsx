@@ -29,7 +29,7 @@ const Contact = () => {
     setLoading(true);
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/contact",
+        "https://my-portfolio-xwy0.onrender.com/api/contact",
         formData
       );
       alert("Message sent successfully!");
